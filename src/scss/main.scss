@@ -1,0 +1,347 @@
+@import 'reset';
+@import 'font';
+
+*{
+	box-sizing: border-box;
+}
+
+#beerContainer{
+	width: 95%;
+	margin: 0 auto;
+}
+
+a{
+	text-decoration: none;
+}
+
+/*-----------------pagination button--------------*/
+nav{
+	height: 50px;
+	text-align: center;
+
+	ul{
+		padding: 20px 0;
+		display: inline;
+	}
+	li{
+		padding: 5px 5px;
+		display: inline-block;
+	} 
+
+	.active {
+			    background-color: blue;
+			    color: white;
+			   	border-color: none;
+			}
+	}
+
+/*------------------Logo Section-------------------*/
+header{
+	background-color: #000;
+	width: 100%;
+	display: grid;
+	grid-template-areas: 'logo logo nav';
+
+	.logo{
+		grid-area: logo;
+	    text-align: right;
+	    padding-right: 175px;
+	    img{
+			width: 20%;
+			padding-bottom: 20px;
+		}
+	}
+}
+
+
+ul{
+	display: flex;
+	align-items: flex-end;
+
+	li{
+		font-family: 'Open Sans'; 
+		font-weight: bold;
+		flex:1;
+		text-align: center;
+    	padding: 0px 0px 20px 10px;
+	}
+	a{
+		color: #fff;
+	}
+
+	.activelink{
+		color: #1486cc;
+	}
+}
+
+#beerlist{
+		padding-top: 20px;
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-gap: 15px;
+		background-color: #fff;
+  		
+	
+	.beers {
+		display: grid;
+    	grid-template-areas: 'beer-img' 'descpt' 'detail';
+       	background-color: #eee; 
+       	padding: 10px 20px;
+
+		.beer-img{
+				grid-area: beer-img;
+				display: grid;
+				grid-template-columns: 1fr 1fr 1fr;
+			
+			.b-img{
+				text-align: center;
+				height: 260px;
+			}
+
+			img{
+				padding: 20px 0;
+				width: auto;
+				height: 250px;
+			}	
+		}	
+  		
+		.descpt{
+				grid-area:descpt;
+				height: 180px;
+				overflow: hidden;
+
+				h1{
+					font-size: 1em;
+					font-weight: bold;
+					text-align: center;
+				}
+				p{
+					font-size: 13px;
+					padding: 12px 0;
+					text-align: center;
+					line-height: 1.5;
+				}
+		}
+
+		
+	}
+}
+
+.detail{
+			grid-area:detail;
+			display: grid;
+			grid-template-columns: 2fr 1fr 2fr;
+			height: 70px;
+			
+			
+			div:first-child{
+				text-align: center;
+				}
+
+			.pH{
+				width: 40%;	
+				text-align: center;		
+			}
+
+			p{
+				font-family: 'Playfair Display';
+				padding:4px 10px;
+
+			}
+
+			.pH44{
+				background: ##FBBA00;
+			}
+			.pH52{
+				background: #D96A38;
+			}
+			.pH56{
+				background: #DF932C;
+			}
+		}
+
+/*------------------QUICK FIND--------------------*/
+
+#quickfindContainer{
+	display: none;
+}
+
+
+#quick_find{
+	height: 27em;
+    width: 80%;
+    margin: 0 auto;
+	display: grid;
+    grid-template-areas: '. beer-img beer-spec .';
+    grid-template-columns: 1fr 2fr 2fr 1fr;
+    background: #eee;
+    margin-top: 30px;
+
+	.beer-img{
+		grid-area: beer-img;
+		text-align: center;
+
+		img{
+			width: 20%;
+			padding-top: 50px;
+		}
+	}
+
+	.beer-spec{
+		grid-area:beer-spec;
+		padding-top: 30px;
+		
+		h2,h3{
+			font-family:'Playfair Display';
+			font-weight: bold;
+			font-size: 18px;
+			line-height: 1.8;
+			text-align: center;
+		}
+		h3{
+			color:#1486cc;
+		}
+
+		.beer-despt{
+			padding: 15px 0;
+		}
+
+	}
+
+	
+}
+
+/*button{
+			background-color:  #1486cc;
+			padding: 15px 25px;
+			border: none;
+			color: #fff;
+			width: 49%;
+			cursor: pointer;
+			margin-top: 20px;
+	}*/
+	.another_beer_button{
+		padding: 15px 30px;
+	    font-size: 1em;
+	    background-color: #fab700;
+	    border: 0;
+	    color: #fff;
+	    margin-left: 15%;
+	    margin-top: 30px;
+	    width: 30%;
+
+	}
+
+	.ingredient{
+		background-color:  #1486cc;
+		width: 20%;
+    	position: relative;
+    	top: -100px;
+    	left: 820px;
+    	padding: 15px 25px;
+		border: none;
+		color: #fff;
+		cursor: pointer;
+	}
+		
+
+/* --------------Ingredient MODAL------------------ */
+#overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: #000;
+	opacity: 0.8;
+	display: none;
+}
+
+#modal {
+	position: absolute;
+	top: 30%;
+	left: 30%;
+	width: 40%;
+	height: 40%;
+	background: #fff;
+	display: none;
+
+	.heading{
+	        background-color: #1486cc;
+		    padding: 15px 5px 15px 10px;
+		    color: #fff;
+
+	    span{
+	    	position: absolute;
+		    right: 15px;
+		    cursor: pointer;
+	    }
+  	}
+	
+	#ingredient-content{
+		padding: 40px;
+			
+		.ingredient-title{
+    		font-weight: bold;
+  		}
+
+  		p{
+  			padding-bottom: 25px;
+  		}
+
+	}
+  	
+
+}
+
+
+/* -------------------PICK A Beer ----------------------*/
+
+
+#searchform{
+	width: 60%;
+	height: 350px;
+	background: #eee;
+	margin: 0 auto;
+	display: none;
+
+	
+	form{
+		width: 90%;
+		margin: 50px auto;
+    	padding-top: 50px;
+    	font-family:'Open Sans';
+    	font-weight: bold;
+    	line-height: 3;
+
+
+		label{
+			color: blue;
+			font-size: 1.2em;
+		}
+
+		input{
+			height: 36px;
+    		margin: 10px;
+		}  
+
+		.col-40{
+				width: 40%;
+			}	
+
+		.col-30{
+				width: 22.5%;
+    			margin: 10px 25px 20px;
+	   		}	
+		}
+}
+
+input[type=submit] {
+    background-color: #1486cc;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    cursor: pointer;
+   	position: relative;
+   	left: 80%;
+}
