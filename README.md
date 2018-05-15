@@ -30,7 +30,7 @@
 
 ## Links
 
-- Project homepage: https://florencenway.github.com/beerStarter-project-3/
-- Repository: https://github.com/florencenway/beerStarter-project-3/
+- Project homepage: https://florencenway.github.io/beerStarter-project-3/
+- Repository: https://github.com/FlorenceNway/beerStarter-project-3
 
 
