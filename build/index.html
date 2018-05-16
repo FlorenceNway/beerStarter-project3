@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="./css/build.css" />
+
+    <title>Beer!</title>
+  </head>
+  <body>
+  
+<a class="screen-reader-text" href="#main">Skip to content</a>
+
+  <header>
+    <div class="logo" tabindex="-1">
+      <img src="img/logo.png" alt="logo">
+    </div>
+    <ul>
+      <li><a href="#" role="navigation" class="activelink beerlink">BEERS</a></li>
+      <li><a href="#" role="navigation" class="quicklink">QUICK FIND</a></li>
+      <li><a href="#" role="navigation" class="pickbeerlink">PICK A BEER</a></li>
+    </ul>
+  </header>
+
+<div id="beerContainer">
+
+  <section id="beerlist">
+    
+  </section>
+  
+    <nav>
+      <ul>
+        <li><button role="pageNumber" class="btn" id="1">&laquo;</button></li>
+        <li><button role="pageNumber" id="1" class="active btn">1</button></li>
+        <li><button role="pageNumber" class="btn" id="2">2</button></li>
+        <li><button role="pageNumber" class="btn" id="3">3</button></li>
+        <li><button role="pageNumber" class="btn" id="4">4</button></li>
+        <li><button role="pageNumber" class="btn" id="5">5</button></li>
+        <li><button role="pageNumber" class="btn" id="5">&laquo;</button></li>
+        </ul>
+    </nav>
+ 
+</div>
+
+<!-- ----------------------------------quick find Link -------------------- -->
+
+<section id="quickfindContainer">
+    
+    <div id="quick_find">
+      
+     
+    </div>
+   
+   <button class="ingredient">INGREDIENTS</button>
+  
+  <button class="another_beer_button">GIVE ME ANOTHER BEER</button>
+</section>
+
+
+
+     
+  <!-- Ingredient Modal Box -->
+  <div id="overlay"></div>
+
+  <div id="modal">
+    <h2 class="heading">INGREDIENTS 
+    <span class="close">&times;</span></h2>
+    
+      <div id="ingredient-content">
+   
+          
+      </div>
+
+  </div>
+
+<!-- ------------Pick A Beer Page ----- -->
+  <section id="searchform">
+      <form>
+        <label>PICK A BEER</label>
+        <hr>
+        <div>
+        NAME <input type="text" name="name" class="col-40">
+        HOPS <input type="text" name="hops" class="col-40"> </br>
+        ABV <input type="text" name="abv" class="col-30">
+        IBU <input type="text" name="ibu" class="col-30">
+        EBC  <input type="text" name="ebc" class="col-30"><br>
+        </div>
+        <input type="submit" name="submit" value="FIND BEER">
+      </form>
+    </section>  
+
+
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script> -->
+    
+    <script src="./js/bundle.js"></script>
+  </body>
+</html>

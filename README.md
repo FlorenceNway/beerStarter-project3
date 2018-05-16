@@ -4,11 +4,12 @@
 - implement from the BrewDog Punk API
 - listing of beers using pagination. 
 - show single beer specification in 'quick find' page 
+- show ingredients when click to ingredient button
 - show search form in 'pick a beer' page
 
 ## Installing / Getting started
 
-- install required gulp npm
+- install required gulp npms
 - include using babel
 - include ES6 compilation
 
@@ -25,6 +26,7 @@
 
 
 ### Publishing
+
 -commit and pushed to GitHub
 
 
