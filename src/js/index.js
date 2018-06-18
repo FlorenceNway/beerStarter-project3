@@ -3,6 +3,7 @@ import Beer from './beer.js';
 
 //$.ajax()
 
+//change the page depends on API url -- pagination
 function changePage(page) {
 
 	axios.get(`https://api.punkapi.com/v2/beers?page=${page}&per_page=6`)
@@ -26,7 +27,7 @@ function changePage(page) {
 		})
 		//fail()
 		.catch(function(error) {
-			console.log(error);
+				console.log(error);
 		});
 }
 
@@ -86,40 +87,48 @@ function quickfind() {
 let quickfindlink = document.querySelector('.quicklink');
 
 quickfindlink.addEventListener('click', function(event) {
-	//console.log("hello");
-	let beer_container = document.getElementById('beerContainer');
-	beer_container.style.display = 'none';
+	
+	//clear previous page content
+	let beer_container = document.getElementById('beerlist');
+	beer_container.innerHTML = '';
 
-	let pickbeer_container = document.getElementById('searchform');
+	//hide pagination bar
+	let pagination_nav = document.getElementById('pagination_nav');
+    pagination_nav.style.display = 'none';       
+           
+    //show quickfind buttons       
+    let quick_find_btn = document.getElementById('quick_find_btn');
+    quick_find_btn.style.display = 'block';
+
+    let pickbeer_container = document.getElementById('searchform');
 	pickbeer_container.style.display = 'none';
-
-	let quick_container = document.getElementById('quick_find'); //quick-find' beer content
-	quick_container.innerHTML = "";
-
-	let quickfindContainer = document.getElementById('quickfindContainer'); //the whole 'quick find' page
-	quickfindContainer.style.display = 'block';
-
-
+           
 	quickfind();
 
 });
 
-// To show beer list when click back to 'beer'
-let beerlink = document.querySelector('.beerlink');
+// To show beer list when click  'beer'
+let beer = document.querySelector('.beerlink');
 
-beerlink.addEventListener('click', function(event) {
-	//console.log("hello");
+beer.addEventListener('click', function(event) {
+	
+	//clear previous page content
+	let content = document.getElementById('beerlist');
+	content.innerHTML = '';
 
-	let beer_container = document.getElementById('beerContainer');
-	beer_container.style.display = 'block';
+	//show pagination bar
+	let pagination_nav = document.getElementById('pagination_nav');
+    pagination_nav.style.display = 'block';   
 
-	let pickbeer_container = document.getElementById('searchform');
+    let quick_find_btn = document.getElementById('quick_find_btn');
+    quick_find_btn.style.display = 'none'; 
+
+    let pickbeer_container = document.getElementById('searchform');
 	pickbeer_container.style.display = 'none';
 
-
-	let quickfindContainer = document.getElementById('quickfindContainer');
-	quickfindContainer.style.display = 'none';
-
+	
+	changePage(1);
+	
 });
 
 
@@ -129,18 +138,22 @@ let pickbeerlink = document.querySelector('.pickbeerlink');
 pickbeerlink.addEventListener('click', function(event) {
 	//console.log("hello");
 
-	let beer_container = document.getElementById('beerContainer');
-	beer_container.style.display = 'none';
+	//clear previous page content
+	let content = document.getElementById('beerlist');
+	content.innerHTML = '';
 
 	let pickbeer_container = document.getElementById('searchform');
 	pickbeer_container.style.display = 'block';
 
+	let pagination_nav = document.getElementById('pagination_nav');
+    pagination_nav.style.display = 'none';
 
-	let quickfindContainer = document.getElementById('quickfindContainer');
-	quickfindContainer.style.display = 'none';
+    let quick_find_btn = document.getElementById('quick_find_btn');
+    quick_find_btn.style.display = 'none';
 
 
 });
+
 
 // to change the blue color when click to navigation menu link
 document.querySelectorAll('a').forEach(link => {
@@ -152,6 +165,7 @@ document.querySelectorAll('a').forEach(link => {
 
 });
 
+
 //--------------for Ingredient Modal Box ---------------
 function modal() {
 
@@ -159,7 +173,7 @@ function modal() {
 
 		.then(response => {
 
-			let beerData = response.data; //console.log(beerData);
+			let beerData = response.data; console.log(beerData);
 			
 			for (let value of beerData) {
 
@@ -189,8 +203,10 @@ function modal() {
 }
 
 //------------To show the ingredient modal box when click 'ingredient button'----------
-document.querySelector('.ingredient').addEventListener('click', function(event) {
 
+document.querySelector('.ingredient-btn').addEventListener('click', function(event) {
+	
+	console.log("hello");
 			modal();
 
 });

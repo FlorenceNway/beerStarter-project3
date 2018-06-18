@@ -1690,12 +1690,7 @@ var Beer = function () {
 
 			//console.log(ph_level);
 
-			var beers = '<div class="beers">\n      \t\t\t\t\t\t      <div class="beer-img">\n\t\t\t\t\t\t\t          <div></div>\n\t\t\t\t\t\t\t          <div class="b-img"><img src="' + this.image + '" alt="beer-bottle"></div>\n\t\t\t\t\t\t\t          <div></div>\n\t\t\t\t\t\t\t      </div>\n\n\t\t\t\t\t\t\t      <div class="descpt">\n\t\t\t\t\t\t\t          <h1>' + this.name + ' </h1>\n\t\t\t\t\t\t\t          <p>' + this.description + '</p>\n\t\t\t\t\t\t\t      </div>\n\n\t\t\t\t\t\t\t      <div class="detail">\n\t\t\t\t\t\t\t          <div>\n\t\t\t\t\t\t\t            <p>ABV</p>\n\t\t\t\t\t\t\t            <p> ' + this.abv + ' </p>\n\t\t\t\t\t\t\t          </div>\n\t\t\t\t\t\t\t          <div>\n\t\t\t\t\t\t\t            <p>IBU</p>\n\t\t\t\t\t\t\t            <p> ' + this.ibu + ' </p>\n\t\t\t\t\t\t\t          </div>\n\n\t\t\t\t\t\t\t          ' + ph_level.outerHTML + '\n\t\t\t\t\t\t\t\t   \n\t\t\t\t\t\t\t      </div>\n\t\t\t\t\t\t\t    </div>';
-			// <div id="pH" >
-			//        <p>pH</p>
-			//        <p> ${this.ph} </p>
-			//    </div> 
-
+			var beers = '<div class="beers">\n\t\t      \t\t\t<div class="beer-img">\n\t\t\t\t\t\t\t<div></div>\n\t\t\t\t\t\t\t<div class="b-img"><img src="' + this.image + '" alt="beer-bottle"></div>\n\t\t\t\t\t\t\t<div></div>\n\t\t\t\t\t\t</div>\n\n\t\t\t\t\t\t<div class="descpt">\n\t\t\t\t\t\t\t<h1>' + this.name + ' </h1>\n\t\t\t\t\t\t\t<p>' + this.description + '</p>\n\t\t\t\t\t\t</div>\n\n\t\t\t\t\t\t<div class="detail">\n\t\t\t\t\t\t\t<div>\n\t\t\t\t\t\t\t\t<p>ABV</p>\n\t\t\t\t\t\t\t\t<p> ' + this.abv + ' </p>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<div>\n\t\t\t\t\t\t\t\t<p>IBU</p>\n\t\t\t\t\t\t\t\t<p> ' + this.ibu + ' </p>\n\t\t\t\t\t\t\t</div>\n\n\t\t\t\t\t\t\t' + ph_level.outerHTML + '\n\t\t\t\t\t\t</div>\t\t\t\t          \n\t\t\t\t\t</div>';
 
 			container.innerHTML += beers;
 		}
@@ -1704,7 +1699,7 @@ var Beer = function () {
 		value: function quickfindPage() {
 
 			//console.log('hello from quickFindPage');
-			var quick_container = document.getElementById('quick_find');
+			var quick_container = document.getElementById('beerlist');
 
 			var ph_level = document.createElement('div');
 			ph_level.className = 'pH';
@@ -1726,12 +1721,12 @@ var Beer = function () {
 			ph_level.appendChild(p1);
 			ph_level.appendChild(p2);
 
-			var quickfind_beer = '\n\t\t\t\t\t\t<div class="beer-img">\n\t\t\t\t\t\t\t<img src="' + this.image + '" alt="beer-bottle">\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class="beer-spec">\n\t\t\t\t\t\t\t<h2>' + this.name + '</h2>\n\t\t\t\t\t\t\t<h3>' + this.tagline + '</h3>\n\t\t\t\t\t\t\t<p class="beer-despt">' + this.description + '</p>\n\t\t\t\t\t\t\t\t     \n\t\t\t\t\t\t\t<div class="detail">\n\t\t\t\t\t\t\t\t<div>\n\t\t\t\t\t\t\t\t    <p>ABV</p>\n\t\t\t\t\t\t\t\t    <p> ' + this.abv + ' </p>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t<div>\n\t\t\t\t\t\t\t\t    <p>IBU</p>\n\t\t\t\t\t\t\t\t    <p> ' + this.ibu + ' </p>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t    ' + ph_level.outerHTML + '\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t</div>';
+			var quickfind_beer = '\n\n\t\t\t\t\t\t\t<div id="quick_find">\n\t\t\t\t\t\t\t\t<div class="beer-image">\n\t\t\t\t\t\t\t\t\t<img src="' + this.image + '" alt="beer-bottle">\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t<div class="beer-specf">\n\t\t\t\t\t\t\t\t\t<h2>' + this.name + '</h2>\n\t\t\t\t\t\t\t\t\t<h3>' + this.tagline + '</h3>\n\t\t\t\t\t\t\t\t\t<p class="beer-despt">' + this.description + '</p>\n\t\t\t\t\t\t\t\t\t\t     \n\t\t\t\t\t\t\t\t\t<div class="detail">\n\t\t\t\t\t\t\t\t\t\t<div>\n\t\t\t\t\t\t\t\t\t\t    <p>ABV</p>\n\t\t\t\t\t\t\t\t\t\t    <p> ' + this.abv + ' </p>\n\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t<div>\n\t\t\t\t\t\t\t\t\t\t    <p>IBU</p>\n\t\t\t\t\t\t\t\t\t\t    <p> ' + this.ibu + ' </p>\n\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t    ' + ph_level.outerHTML + '\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t';
 
 			quick_container.innerHTML = quickfind_beer;
 
-			//-------Modal box calling when click ingredient button/ Hide other pages -----------
-			document.querySelector('.ingredient').addEventListener('click', function (event) {
+			//-------Modal box calling when click ingredient button/ overlay background -----------
+			document.querySelector('.ingredient-btn').addEventListener('click', function (event) {
 
 				document.getElementById("overlay").style.display = "block";
 				document.getElementById("modal").style.display = "block";
@@ -1774,14 +1769,15 @@ var _axios = require('axios');
 
 var _axios2 = _interopRequireDefault(_axios);
 
-var _beer = require('./beer.js');
+var _beer4 = require('./beer.js');
 
-var _beer2 = _interopRequireDefault(_beer);
+var _beer5 = _interopRequireDefault(_beer4);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 //$.ajax()
 
+//change the page depends on API url -- pagination
 function changePage(page) {
 
 	_axios2.default.get('https://api.punkapi.com/v2/beers?page=' + page + '&per_page=6')
@@ -1802,9 +1798,9 @@ function changePage(page) {
 
 				if (beerData.length) {
 
-					var beer = new _beer2.default(value.name, value.description, value.tagline, value.image_url, value.abv, value.ibu, value.ebc, value.ph, value.hop, value.hop1, value.hop2, value.malt, value.malt1, value.malt2, value.yeast);
+					var _beer = new _beer5.default(value.name, value.description, value.tagline, value.image_url, value.abv, value.ibu, value.ebc, value.ph, value.hop, value.hop1, value.hop2, value.malt, value.malt1, value.malt2, value.yeast);
 
-					beer.addToPage();
+					_beer.addToPage();
 				}
 			}
 		} catch (err) {
@@ -1867,9 +1863,9 @@ function quickfind() {
 
 				if (beerData.length) {
 
-					var beer = new _beer2.default(value.name, value.description, value.tagline, value.image_url, value.abv, value.ibu, value.ebc, value.ph, value.hop, value.hop1, value.hop2, value.malt, value.malt1, value.malt2, value.yeast);
+					var _beer2 = new _beer5.default(value.name, value.description, value.tagline, value.image_url, value.abv, value.ibu, value.ebc, value.ph, value.hop, value.hop1, value.hop2, value.malt, value.malt1, value.malt2, value.yeast);
 
-					beer.quickfindPage();
+					_beer2.quickfindPage();
 				}
 			}
 		} catch (err) {
@@ -1897,36 +1893,45 @@ function quickfind() {
 var quickfindlink = document.querySelector('.quicklink');
 
 quickfindlink.addEventListener('click', function (event) {
-	//console.log("hello");
-	var beer_container = document.getElementById('beerContainer');
-	beer_container.style.display = 'none';
+
+	//clear previous page content
+	var beer_container = document.getElementById('beerlist');
+	beer_container.innerHTML = '';
+
+	//hide pagination bar
+	var pagination_nav = document.getElementById('pagination_nav');
+	pagination_nav.style.display = 'none';
+
+	//show quickfind buttons       
+	var quick_find_btn = document.getElementById('quick_find_btn');
+	quick_find_btn.style.display = 'block';
 
 	var pickbeer_container = document.getElementById('searchform');
 	pickbeer_container.style.display = 'none';
-
-	var quick_container = document.getElementById('quick_find'); //quick-find' beer content
-	quick_container.innerHTML = "";
-
-	var quickfindContainer = document.getElementById('quickfindContainer'); //the whole 'quick find' page
-	quickfindContainer.style.display = 'block';
 
 	quickfind();
 });
 
-// To show beer list when click back to 'beer'
-var beerlink = document.querySelector('.beerlink');
+// To show beer list when click  'beer'
+var beer = document.querySelector('.beerlink');
 
-beerlink.addEventListener('click', function (event) {
-	//console.log("hello");
+beer.addEventListener('click', function (event) {
 
-	var beer_container = document.getElementById('beerContainer');
-	beer_container.style.display = 'block';
+	//clear previous page content
+	var content = document.getElementById('beerlist');
+	content.innerHTML = '';
+
+	//show pagination bar
+	var pagination_nav = document.getElementById('pagination_nav');
+	pagination_nav.style.display = 'block';
+
+	var quick_find_btn = document.getElementById('quick_find_btn');
+	quick_find_btn.style.display = 'none';
 
 	var pickbeer_container = document.getElementById('searchform');
 	pickbeer_container.style.display = 'none';
 
-	var quickfindContainer = document.getElementById('quickfindContainer');
-	quickfindContainer.style.display = 'none';
+	changePage(1);
 });
 
 // To show 'Pick a beer' page when click back to 'pick beer'
@@ -1935,14 +1940,18 @@ var pickbeerlink = document.querySelector('.pickbeerlink');
 pickbeerlink.addEventListener('click', function (event) {
 	//console.log("hello");
 
-	var beer_container = document.getElementById('beerContainer');
-	beer_container.style.display = 'none';
+	//clear previous page content
+	var content = document.getElementById('beerlist');
+	content.innerHTML = '';
 
 	var pickbeer_container = document.getElementById('searchform');
 	pickbeer_container.style.display = 'block';
 
-	var quickfindContainer = document.getElementById('quickfindContainer');
-	quickfindContainer.style.display = 'none';
+	var pagination_nav = document.getElementById('pagination_nav');
+	pagination_nav.style.display = 'none';
+
+	var quick_find_btn = document.getElementById('quick_find_btn');
+	quick_find_btn.style.display = 'none';
 });
 
 // to change the blue color when click to navigation menu link
@@ -1959,7 +1968,7 @@ function modal() {
 
 	_axios2.default.get('https://api.punkapi.com/v2/beers/random').then(function (response) {
 
-		var beerData = response.data; //console.log(beerData);
+		var beerData = response.data;console.log(beerData);
 
 		var _iteratorNormalCompletion3 = true;
 		var _didIteratorError3 = false;
@@ -1980,9 +1989,9 @@ function modal() {
 					var hops2 = value.ingredients.hops[0].amount.unit;
 					var yeast = value.ingredients.yeast;
 
-					var beer = new _beer2.default(value.name, value.description, value.tagline, value.image_url, value.abv, value.ibu, value.ebc, value.ph, hops, hops1, hops2, malt, malt1, malt2, yeast);
+					var _beer3 = new _beer5.default(value.name, value.description, value.tagline, value.image_url, value.abv, value.ibu, value.ebc, value.ph, hops, hops1, hops2, malt, malt1, malt2, yeast);
 
-					beer.modalBox();
+					_beer3.modalBox();
 				}
 			}
 		} catch (err) {
@@ -2007,8 +2016,10 @@ function modal() {
 }
 
 //------------To show the ingredient modal box when click 'ingredient button'----------
-document.querySelector('.ingredient').addEventListener('click', function (event) {
 
+document.querySelector('.ingredient-btn').addEventListener('click', function (event) {
+
+	console.log("hello");
 	modal();
 });
 

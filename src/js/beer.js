@@ -47,37 +47,32 @@ export default class Beer {
 		//console.log(ph_level);
 
 		let beers = `<div class="beers">
-      						      <div class="beer-img">
-							          <div></div>
-							          <div class="b-img"><img src="${this.image}" alt="beer-bottle"></div>
-							          <div></div>
-							      </div>
+		      			<div class="beer-img">
+							<div></div>
+							<div class="b-img"><img src="${this.image}" alt="beer-bottle"></div>
+							<div></div>
+						</div>
 
-							      <div class="descpt">
-							          <h1>${this.name} </h1>
-							          <p>${this.description}</p>
-							      </div>
+						<div class="descpt">
+							<h1>${this.name} </h1>
+							<p>${this.description}</p>
+						</div>
 
-							      <div class="detail">
-							          <div>
-							            <p>ABV</p>
-							            <p> ${this.abv} </p>
-							          </div>
-							          <div>
-							            <p>IBU</p>
-							            <p> ${this.ibu} </p>
-							          </div>
+						<div class="detail">
+							<div>
+								<p>ABV</p>
+								<p> ${this.abv} </p>
+							</div>
+							<div>
+								<p>IBU</p>
+								<p> ${this.ibu} </p>
+							</div>
 
-							          ${ph_level.outerHTML}
-								   
-							      </div>
-							    </div>`
-							    	// <div id="pH" >
-							     //        <p>pH</p>
-							     //        <p> ${this.ph} </p>
-							     //    </div> 
+							${ph_level.outerHTML}
+						</div>				          
+					</div>`	
+							      
 			
-	
 		container.innerHTML += beers;
 	}
 
@@ -85,7 +80,7 @@ export default class Beer {
 	quickfindPage() {
 
 		//console.log('hello from quickFindPage');
-		let quick_container = document.getElementById('quick_find');
+		let quick_container = document.getElementById('beerlist');
 
 		let ph_level = document.createElement('div');
 			ph_level.className = 'pH';
@@ -110,34 +105,39 @@ export default class Beer {
 
 		
 		let quickfind_beer = `
-						<div class="beer-img">
-							<img src="${this.image}" alt="beer-bottle">
-						</div>
-						<div class="beer-spec">
-							<h2>${this.name}</h2>
-							<h3>${this.tagline}</h3>
-							<p class="beer-despt">${this.description}</p>
-								     
-							<div class="detail">
-								<div>
-								    <p>ABV</p>
-								    <p> ${this.abv} </p>
+
+							<div id="quick_find">
+								<div class="beer-image">
+									<img src="${this.image}" alt="beer-bottle">
 								</div>
-								<div>
-								    <p>IBU</p>
-								    <p> ${this.ibu} </p>
+								<div class="beer-specf">
+									<h2>${this.name}</h2>
+									<h3>${this.tagline}</h3>
+									<p class="beer-despt">${this.description}</p>
+										     
+									<div class="detail">
+										<div>
+										    <p>ABV</p>
+										    <p> ${this.abv} </p>
+										</div>
+										<div>
+										    <p>IBU</p>
+										    <p> ${this.ibu} </p>
+										</div>
+										    ${ph_level.outerHTML}
+									</div>
 								</div>
-								    ${ph_level.outerHTML}
 							</div>
-							
-						</div>`
+														
+							`
+						
 		
 						
 		quick_container.innerHTML= quickfind_beer;
 
 	
-	//-------Modal box calling when click ingredient button/ Hide other pages -----------
-		document.querySelector('.ingredient').addEventListener('click', function(event) {
+//-------Modal box calling when click ingredient button/ overlay background -----------
+		document.querySelector('.ingredient-btn').addEventListener('click', function(event) {
 	
 			document.getElementById("overlay").style.display = "block";
 			document.getElementById("modal").style.display = "block";
